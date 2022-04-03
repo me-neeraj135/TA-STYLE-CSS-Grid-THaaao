@@ -1,0 +1,156 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 10px;
+}
+
+.grid-container > div {
+  background-color: white;
+  border-radius: 0.2rem;
+  font-size: 20px;
+
+  p {
+    padding: 1rem 0 1rem 0.5rem;
+  }
+  a {
+    padding-left: 0.5rem;
+    color: $color-a-tag;
+    font-weight: 600;
+  }
+}
+
+.item1 {
+  grid-column: 1 / -1;
+  border-top: 5px solid $color-blue;
+  nav ul {
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem 0;
+    li a {
+      text-transform: capitalize;
+      color: $color-blue;
+    }
+  }
+}
+.item2 {
+  border-top: 5px solid $color-blue;
+}
+.item3 {
+  border-top: 5px solid $color-blue;
+  grid-column: 2;
+  grid-row: 2 / span 3;
+  div {
+    border-radius: 50%;
+    width: 18rem;
+    height: 18rem;
+    margin: 0 auto;
+  }
+}
+
+.item4 {
+  border-top: 5px solid $color-blue;
+  .a-tag {
+    background-color: $color-a-tag;
+    padding: 0.6rem 0;
+    color: white;
+    border-bottom-left-radius: 0.2rem;
+    border-bottom-right-radius: 0.2rem;
+    padding-left: 0.5rem;
+  }
+}
+.item5 {
+  border-top: 5px solid $color-blue;
+  grid-row: 3 / span 2;
+  div {
+    text-align: center;
+  }
+}
+
+.item6 {
+  h2 {
+    background-color: $color-blue;
+    color: white;
+    padding: 1rem 0 1rem 0.5rem;
+    border-top-left-radius: 0.2rem;
+    border-top-right-radius: 0.2rem;
+  }
+}
+.item7 {
+  border-top: 5px solid $color-blue;
+}
+
+// media-queries
+
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 13px;
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "header  header"
+      "item2 item4"
+      "item5 item6"
+      "main item7";
+  }
+  .header {
+    grid-area: header;
+  }
+  .item2 {
+    grid-area: item2;
+  }
+  .item4 {
+    grid-area: item4;
+  }
+  .item5 {
+    grid-area: item5;
+  }
+  .item6 {
+    grid-area: item6;
+  }
+  .main {
+    grid-area: main;
+  }
+  .item7 {
+    grid-area: item7;
+  }
+}
+@media screen and (max-width: 368px) {
+  html {
+    font-size: 13px;
+  }
+  .grid-container {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas:
+      "header"
+      "item2 "
+      "item4"
+      "main "
+      "item5 "
+      "item6"
+      "item7";
+  }
+  .header {
+    grid-area: header;
+  }
+  .item2 {
+    grid-area: item2;
+  }
+  .item4 {
+    grid-area: item4;
+  }
+  .item5 {
+    grid-area: item5;
+  }
+  .item6 {
+    grid-area: item6;
+  }
+  .main {
+    grid-area: main;
+  }
+  .item7 {
+    grid-area: item7;
+  }
+}
